@@ -13,7 +13,7 @@ $\rho e^{i\theta} = \rho \cos(\theta) + i \rho \sin(\theta)$\\
 
 $(x, y)$ rotated by $\alpha$ is
 $(\cos(\alpha) x - \sin(\alpha) y, \sin(\alpha)  x + \cos(\alpha) y)$
-\input{Geometrie/points.tex}
+\input{geometry/points.tex}
 
 \subsection{Lines}
 General equation:$Ax + By = C$. The line through $(x_1, y_1), (x_2, y_2)$ is given by: $A = y_2 - y_1$, $B = x_1 - x_2$, $C = A x_1 + B y_1$.
@@ -26,11 +26,11 @@ Intersection is given by
 $$\begin{pmatrix}
 x\\
 y
-\end{pmatrix} = 
+\end{pmatrix} =
 \begin{pmatrix}
 A_1 & B_1 \\
 A_2 & B_2 \\
-\end{pmatrix}^{-1} 
+\end{pmatrix}^{-1}
 \begin{pmatrix}
 C_1 \\
 C_2
@@ -40,7 +40,7 @@ C_2
 \begin{pmatrix}
 B_2 & -B_1 \\
 -A_2 & A_1 \\
-\end{pmatrix} 
+\end{pmatrix}
 \begin{pmatrix}
 C_1 \\
 C_2
@@ -103,7 +103,7 @@ boolean segmentIntersection(Segment[] S) {
       T.add(s);
       Segment above = T.higher(s);
       Segment bellow = T.lower(s);
-      if((above != null && intersects(above, s)) || 
+      if((above != null && intersects(above, s)) ||
          (bellow != null && intersects(bellow, s)))
         return true;
     } else {
@@ -167,7 +167,7 @@ class SegmentCmp implements Comparator<Segment> {
 \subsubsection{Circles from 3 points}
 \begin{itemize}
 \item $3$ non collinear points define a unique circle.
-\item $c = $ intersection of bisectors of $XY$ and $YZ$. 
+\item $c = $ intersection of bisectors of $XY$ and $YZ$.
 \end{itemize}
 \subsection{Polygon}
 \subsubsection{Triangles}
@@ -269,18 +269,18 @@ Point[] buildChain(Point[] points, int sgn) {
 
 \subsection{Interval Tree}
 
-\includegraphics[scale=0.38]{Geometrie/it.png}
+\includegraphics[scale=0.38]{geometry/it.png}
 
-\lstinputlisting{Geometrie/intervaltree.java}
+\lstinputlisting{geometry/intervaltree.java}
 
 \subsection{Area of union of rectangles}
 
-\lstinputlisting{Geometrie/rectangles.java}
+\lstinputlisting{geometry/rectangles.java}
 
 %\subsection{C library by Xiao}
 %\lstset{language=C}
 %{\setmainfont{CODE2000.TTF} % font that supports chinese
-%\lstinputlisting{Geometrie/Geometry.h}
+%\lstinputlisting{geometry/Geometry.h}
 %}
 %\lstset{language=Java}
 

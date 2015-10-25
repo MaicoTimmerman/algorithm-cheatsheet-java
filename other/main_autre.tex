@@ -1,7 +1,4 @@
 \section{Miscellaneous}
-\begin{center}
-	\includegraphics[width=0.7\linewidth]{whyuno.jpg}
-\end{center}
 \subsection{The answer}
 \begin{lstlisting}
 int reponse() { return 42; }
@@ -19,7 +16,7 @@ int findKth(int[] A, int k, int n) {
   for(int i = 0; i < nG; i++) {
     if(i == nG - 1 && n % 5 != 0) {
       group[i] = Arrays.copyOfRange(A, (n/5)* 5, n);
-      kth[i] = findKth(group[i], group[i].length / 2, 
+      kth[i] = findKth(group[i], group[i].length / 2,
                      group[i].length);
     } else {
       group[i] = Arrays.copyOfRange(A, i*5, (i+1)*5);
@@ -27,7 +24,7 @@ int findKth(int[] A, int k, int n) {
     }
   }
   int M = findKth(kth, nG / 2, nG);
-  int[] S = new int[n]; 
+  int[] S = new int[n];
   int[] E = new int[n];
   int[] B = new int[n];
   int s = 0, e = 0, b = 0;
@@ -61,7 +58,7 @@ int[] countSort(int[] A, int k) { // O(n + k)
   }
   return B;
 }
-	
+
 int[][] radixSort(int[][] nums, int k) { // O(d*(n+k))
   int n = nums.length;
   int m = nums[0].length;
@@ -84,7 +81,7 @@ int[][] radixSort(int[][] nums, int k) { // O(d*(n+k))
   return nums;
 }
 
-int mergeSort(int[] a) { 
+int mergeSort(int[] a) {
   int n = a.length;
   if(n == 1) {return 0;}
   int m = n / 2;
@@ -136,7 +133,7 @@ int countMinSwapsToSort(int[] a) {
 }
 
 //Count (i, j):h[i] <= h[k] <= h[j], k = i+1,...,j-1.
-int countVisiblePairs(int[] h) { // O(n) 
+int countVisiblePairs(int[] h) { // O(n)
   int n = h.length;
   int[] p = new int[n];
   int[] r = new int[n];
@@ -191,7 +188,7 @@ class HuffmanNode implements Comparable<HuffmanNode>
     this.left = left;
     this.right = right;
     isLeaf = false;
-  } 
+  }
   public HuffmanNode(int charIndex, int occurences)
   {
     this.charIndex = charIndex;
@@ -225,14 +222,14 @@ void getHuffmanTable(HuffmanNode tree, BitSet[] result, BitSet current, int pos)
     leftBitSet.or(current);
     leftBitSet.set(pos, false);
     getHuffmanTable(tree.left, result, leftBitSet, pos+1);
-            
+
     BitSet rightBitSet = new BitSet();
     rightBitSet.or(current);
     rightBitSet.set(pos, true);
     getHuffmanTable(tree.right, result, rightBitSet, pos+1);
   }
 }
-    
+
 //n=occurences.length
 static BitSet[] getHuffmanTable(int n, HuffmanNode tree) {
   BitSet[] result = new BitSet[n];
@@ -242,6 +239,6 @@ static BitSet[] getHuffmanTable(int n, HuffmanNode tree) {
 \end{lstlisting}
 \subsection{Union Find}
 \label{unionFind}
-\lstinputlisting{Autre/unionfind.java}
+\lstinputlisting{other/unionfind.java}
 \subsection{Fenwick Tree (RSQ solver)}
-\lstinputlisting{Autre/Fenwicktree.java}
+\lstinputlisting{other/Fenwicktree.java}

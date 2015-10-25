@@ -302,7 +302,7 @@ $a,b$ odd
   \left(\frac{a}{b}\right)\left(\frac{b}{a}\right) & = (-1)^{\frac{a-1}{2}\frac{b-1}{2}}.
 \end{align*}
 
-\lstinputlisting{Math/QR.java}
+\lstinputlisting{math/QR.java}
 
 \subsection{Linear equations}
 
@@ -316,7 +316,7 @@ double[] gaussElim(double[][] A, double[] b) {
     for(int i = p + 1; i < N; i++) {
       if(Math.abs(A[i][p])>Math.abs(A[max][p])) {
         max = i;
-      } 
+      }
     }
     swap(A, p, max);
     swap(b, p, max);
@@ -358,9 +358,9 @@ double ternarySearch(double left, double right) {
   double leftThird = (left * 2 + right) / 3;
   double rightThird = (left + right * 2) / 3;
   //minimize >, maximize <
-  if(f(leftThird) > f(rightThird)) { 
+  if(f(leftThird) > f(rightThird)) {
     return ternarySearch(leftThird, right);
-  }			   
+  }
   return ternarySearch(left, rightThird);
 }
 \end{lstlisting}
@@ -376,11 +376,11 @@ double integral(double a, double b) {
   double d = (a + c) / 2.0;
   double e = (b + c) / 2.0;
   double Q1 = h/6  * (f(a) + 4*f(c) + f(b));
-  double Q2 = h/12 * (f(a)+4*f(d)+2*f(c)+4*f(e)  
+  double Q2 = h/12 * (f(a)+4*f(d)+2*f(c)+4*f(e)
                       +f(b));
   if (Math.abs(Q2 - Q1) <= E) {
     return Q2 + (Q2 - Q1) / 15;
-  } else {        	
+  } else {
     return integral(a, c) + integral(c, b);
   }
 }
